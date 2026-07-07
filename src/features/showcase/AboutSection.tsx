@@ -14,9 +14,9 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Video */}
           <FadeIn delay={0.2} className="flex justify-center w-full">
-            <div className="w-full aspect-video rounded-2xl overflow-hidden border border-brand-blue/30 shadow-[0_0_30px_rgba(0,240,255,0.15)] bg-black">
+            <div className="w-full max-w-sm mx-auto aspect-[9/16] rounded-2xl overflow-hidden border border-brand-blue/30 shadow-[0_0_30px_rgba(0,240,255,0.15)] bg-black">
               <iframe
-                src="https://embed.voomly.com/embed/assets/embed.html?videoId=xxLXjRkBg9mCOXt8_Qgtul8XqAwWMFD-8sNVKGY4BPaTA1l4R&videoRatio=1.777778&type=v&skinColor=%23008EFF"
+                src="https://embed.voomly.com/embed/assets/embed.html?videoId=377VvJU72lcOhtFGz0I8FRlhdgVOJFzwUkrNJ2RoDOtPFp1yJ&videoRatio=0.5625&type=v&skinColor=%23008EFF"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

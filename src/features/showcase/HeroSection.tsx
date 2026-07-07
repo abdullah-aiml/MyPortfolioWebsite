@@ -85,21 +85,6 @@ export function HeroSection() {
         AI • ML • NLP • Deep Learning • LLMs • RAG • Data Visualization
       </motion.p>
 
-      {/* Resume Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 2.5 }}
-      >
-        <a 
-          href="/P1 maths ordering.pdf" 
-          download="M_Abdullah_Ahmad_Resume.pdf"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00f0ff]/10 to-[#b026ff]/10 hover:from-[#00f0ff]/20 hover:to-[#b026ff]/20 border border-[#00f0ff]/30 hover:border-[#00f0ff]/60 text-white font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.25)] hover:-translate-y-1"
-        >
-          <Download size={18} className="text-[#00f0ff]" />
-          <span>My Resume</span>
-        </a>
-      </motion.div>
     </section>
   );
 }
