@@ -24,7 +24,7 @@ export function ContactSection() {
     };
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/m.abdullahahmad.am@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/mabdullahahmad1822@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,13 +103,13 @@ export function ContactSection() {
           {/* Right: Connect Links */}
           <div className="flex flex-col justify-center space-y-6">
             <FadeIn delay={0.3}>
-              <a href="mailto:m.abdullahahmad.am@gmail.com" className="project-card flex items-center gap-5 group cursor-pointer">
+              <a href="mailto:mabdullahahmad1822@gmail.com" className="project-card flex items-center gap-5 group cursor-pointer">
                 <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan/20 transition-colors shrink-0">
                   <Mail size={22} />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white mb-0.5">Email</h3>
-                  <p className="text-sm text-gray-400">m.abdullahahmad.am@gmail.com</p>
+                  <p className="text-sm text-gray-400">mabdullahahmad1822@gmail.com</p>
                 </div>
               </a>
             </FadeIn>
