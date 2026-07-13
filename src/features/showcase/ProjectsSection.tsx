@@ -3,7 +3,21 @@ import { FadeIn } from "@/src/components/animations/FadeIn";
 import { ExternalLink, GitFork, X } from "lucide-react";
 import { useState } from "react";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  iconBg: string;
+  iconEmoji: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  demoLink?: string;
+  hideDemoIcon?: boolean;
+  featured?: boolean;
+  videoSrc?: string;
+};
+
+const projects: Project[] = [
   {
     title: "HalluciGuard",
     description: "An open-source hallucination detection pipeline that performs deep semantic validation on LLM outputs against long-form reference documents using interpretable AI.",
@@ -24,18 +38,23 @@ const projects = [
     githubUrl: "https://github.com/abdullah-aiml/clipscript-backend",
     featured: true,
     hideDemoIcon: true,
+    videoSrc: "https://embed.voomly.com/embed/assets/embed.html?videoId=mUiZTsl29d_dk14djRZ2E86YWVVdJpSALrsjLyV4fJoq7xg0e&videoRatio=1.777778&type=v&skinColor=%23008EFF",
   },
   {
-    title: "FlowGen AI",
-    description: "Built an AI-powered automation platform that converts natural-language business processes into executable workflows. The system generates workflow nodes, simulates execution, runs automations through APIs/webhooks, monitors failures, applies self-healing retries, and adds human approval for sensitive actions like emails, database updates, and client operations.",
-    tech: ["Next.js", "LangGraph", "FastAPI", "React Flow", "PostgreSQL"],
+    title: "CareerOps AI",
+    description: "Built an AI-powered job hunting automation assistant that searches roles, scores job fit, generates tailored application packs, drafts outreach emails, and tracks applications through a human-approved workflow. The system integrates job intelligence, resume matching, Gmail outreach, application URL handling, and safety checks to ensure no email or application is sent without approval.",
+    tech: ["FastAPI", "Next.js", "PostgreSQL", "Gmail API", "Groq API", "Job Automation", "AI Agents", "Human-in-the-Loop"],
     iconBg: "bg-purple-500",
     iconEmoji: "⚡",
+    githubUrl: "https://github.com/abdullah-aiml/careerops-ai",
+    featured: true,
+    hideDemoIcon: true,
+    videoSrc: "https://embed.voomly.com/embed/assets/embed.html?videoId=QQS5IhePCVdOz0oLkicLpMSYosOXcH1xI2drFmUNCJKfczZAF&videoRatio=1.777778&type=v&skinColor=%23008EFF",
   }
 ];
 
 export function ProjectsSection() {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
     <section className="py-28 px-6 lg:px-24" id="projects">
@@ -107,7 +126,7 @@ export function ProjectsSection() {
                       </a>
                     ) : (
                       <button 
-                        onClick={() => setIsDemoModalOpen(true)}
+                        onClick={() => setActiveVideo(project.videoSrc || null)}
                         className="w-full py-2.5 rounded-lg bg-gradient-to-r from-[#00f0ff]/10 to-[#b026ff]/10 hover:from-[#00f0ff]/20 hover:to-[#b026ff]/20 border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-300"
                       >
                         View Demo
@@ -123,21 +142,21 @@ export function ProjectsSection() {
       </div>
 
       {/* Video Modal */}
-      {isDemoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-sm" onClick={() => setIsDemoModalOpen(false)}>
+      {activeVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-sm" onClick={() => setActiveVideo(null)}>
           <div 
             className="relative w-full max-w-5xl aspect-video bg-[#0a0b10] rounded-2xl overflow-hidden border border-[#00f0ff]/30 shadow-[0_0_50px_rgba(0,240,255,0.2)]"
             onClick={(e) => e.stopPropagation()}
           >
             <button 
-              onClick={() => setIsDemoModalOpen(false)}
+              onClick={() => setActiveVideo(null)}
               className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-[#00f0ff]/20 hover:text-[#00f0ff] transition-colors border border-white/10"
               aria-label="Close modal"
             >
               <X size={20} />
             </button>
             <iframe 
-              src="https://embed.voomly.com/embed/assets/embed.html?videoId=mUiZTsl29d_dk14djRZ2E86YWVVdJpSALrsjLyV4fJoq7xg0e&videoRatio=1.777778&type=v&skinColor=%23008EFF" 
+              src={activeVideo} 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen 
