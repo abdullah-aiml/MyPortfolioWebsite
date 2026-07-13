@@ -47,17 +47,20 @@ export function ExperienceSection() {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline line */}
-          <div className="timeline-line" />
+          <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-brand-cyan/40 via-brand-purple/40 to-transparent" />
 
           <div className="space-y-20">
             {experiences.map((exp, i) => (
               <div key={i} className="relative">
                 {/* Timeline node */}
-                <div className="timeline-node" style={{ top: "40px" }} />
+                <div 
+                  className="absolute left-8 md:left-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-brand-cyan border-[3px] border-brand-bg z-10 shadow-[0_0_12px_rgba(0,168,255,0.6)]" 
+                  style={{ top: "40px" }} 
+                />
 
                 {/* Card positioned left or right */}
-                <div className={`flex ${exp.side === "left" ? "justify-start pr-[55%]" : "justify-end pl-[55%]"}`}>
-                  <FadeIn delay={i * 0.2} direction={exp.side === "left" ? "right" : "left"} className="w-full">
+                <div className={`flex w-full justify-start pl-16 ${exp.side === "left" ? "md:justify-start md:pl-0 md:pr-[55%]" : "md:justify-end md:pl-[55%] md:pr-0"}`}>
+                  <FadeIn delay={i * 0.2} direction={exp.side === "left" ? "right" : "left"} className="w-full md:w-auto flex-1">
                     <div className="project-card">
                       {/* Header with icon */}
                       <div className="flex items-start justify-between mb-3">

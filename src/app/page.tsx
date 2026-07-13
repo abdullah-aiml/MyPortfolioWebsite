@@ -8,7 +8,7 @@ import { NeuralBackground } from "@/src/components/animations/NeuralBackground";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       {/* Animated neural network background */}
       <NeuralBackground />
 
