@@ -113,24 +113,37 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                {(project.featured || project.demoLink) && (
-                  <div className="mt-auto pt-4">
-                    {project.demoLink ? (
+                {(project.featured || project.demoLink || project.githubUrl) && (
+                  <div className="mt-auto pt-4 space-y-3">
+                    {(project.featured || project.demoLink) && (
+                      project.demoLink ? (
+                        <a 
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-center w-full py-2.5 rounded-lg bg-gradient-to-r from-[#00f0ff]/10 to-[#b026ff]/10 hover:from-[#00f0ff]/20 hover:to-[#b026ff]/20 border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-300"
+                        >
+                          View Demo
+                        </a>
+                      ) : (
+                        <button 
+                          onClick={() => setActiveVideo(project.videoSrc || null)}
+                          className="w-full py-2.5 rounded-lg bg-gradient-to-r from-[#00f0ff]/10 to-[#b026ff]/10 hover:from-[#00f0ff]/20 hover:to-[#b026ff]/20 border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-300"
+                        >
+                          View Demo
+                        </button>
+                      )
+                    )}
+                    
+                    {project.githubUrl && (
                       <a 
-                        href={project.demoLink}
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-center w-full py-2.5 rounded-lg bg-gradient-to-r from-[#00f0ff]/10 to-[#b026ff]/10 hover:from-[#00f0ff]/20 hover:to-[#b026ff]/20 border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-300"
+                        className="block flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 text-gray-300 hover:text-white font-semibold text-sm transition-all duration-300"
                       >
-                        View Demo
+                        <GitFork size={16} /> View Code
                       </a>
-                    ) : (
-                      <button 
-                        onClick={() => setActiveVideo(project.videoSrc || null)}
-                        className="w-full py-2.5 rounded-lg bg-gradient-to-r from-[#00f0ff]/10 to-[#b026ff]/10 hover:from-[#00f0ff]/20 hover:to-[#b026ff]/20 border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-300"
-                      >
-                        View Demo
-                      </button>
                     )}
                   </div>
                 )}
