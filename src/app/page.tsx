@@ -2,6 +2,7 @@ import { HeroSection } from "@/src/features/showcase/HeroSection";
 import { AboutSection } from "@/src/features/showcase/AboutSection";
 import { ProjectsSection } from "@/src/features/showcase/ProjectsSection";
 import { ExperienceSection } from "@/src/features/showcase/ExperienceSection";
+import { WorkExperienceSection } from "@/src/features/showcase/WorkExperienceSection";
 import { TechStackSection } from "@/src/features/showcase/TechStackSection";
 import { ContactSection } from "@/src/features/contact/ContactSection";
 import { NeuralBackground } from "@/src/components/animations/NeuralBackground";
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
+        <WorkExperienceSection />
         <ExperienceSection />
         <TechStackSection />
         <ContactSection />

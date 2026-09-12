@@ -37,7 +37,7 @@ export function AboutSection() {
 
             <FadeIn delay={0.4}>
               <p className="text-gray-400 leading-relaxed">
-                I&apos;m currently in my final semester of Computer Science. While I value the theory behind algorithms and data structures, my real passion lies in building practical things. I try to go beyond just wrapping OpenAI APIs—I enjoy diving into the architecture to build robust, full-stack machine learning solutions from the ground up.
+                I recently graduated with a degree in Computer Science. While I value the theory behind algorithms and data structures, my real passion lies in building practical things. I try to go beyond just wrapping OpenAI APIs—I enjoy diving into the architecture to build robust, full-stack machine learning solutions from the ground up.
               </p>
             </FadeIn>
 
