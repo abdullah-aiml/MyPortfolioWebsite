@@ -19,7 +19,7 @@ const workExperiences = [
   },
   {
     role: "Software Engineering Fellow",
-    company: "Headstarter AI · Remote",
+    company: "Headstarter AI · Remote, United States",
     date: "Jul 2024 - Aug 2024",
     description: [
         "Engineered scalable software applications utilizing Next.js, Python, and Tailwind CSS through rigorous, rapid Agile development sprints.",
@@ -30,7 +30,7 @@ const workExperiences = [
     side: "right" as const,
   },
   {
-    role: "Project Manager",
+    role: "Project Management Intern",
     company: "Digicon Valley · Onsite, Lahore",
     date: "Nov 2022 - Feb 2023",
     description: [

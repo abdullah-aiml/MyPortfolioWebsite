@@ -4,9 +4,9 @@ import { Briefcase, TrendingUp, GraduationCap, Award, ExternalLink } from "lucid
 
 const experiences = [
   {
-    role: "BS Computer Science (8th Semester)",
+    role: "BS Computer Science",
     company: "University of the Punjab",
-    date: "Nov 2022 - Sept 2026",
+    date: "Nov 2022 - Aug 2026",
     description: "Mastering core architectural principles through intensive coursework in Data Structures, Algorithms, and Database Management Systems. Leveraged this rigorous academic foundation to pivot heavily into applied Artificial Intelligence, architecting real-world ML pipelines and GenAI solutions.",
     tech: ["AI / ML", "DSA", "DBMS", "Python", "PostgreSQL"],
     icon: <GraduationCap size={20} />,
